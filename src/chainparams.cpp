@@ -50,7 +50,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "BBC NEWS 22/Jun/2018 Zimbabwe's President Mnangagwa appeals for racial unity ahead of election";
+    const char* pszTimestamp = "BBC NEWS 22/Jul/2018 Flying lava injures 23 in Hawaii";
     const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -130,12 +130,12 @@ public:
         nPruneAfterHeight = 100000;
 
 
-        genesis = CreateGenesisBlock(1532243130, 2085169741, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1532270671, 2085176539, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("Genesis Block Hash : %s" , consensus.hashGenesisBlock.ToString());
         LogPrintf("merkle Hash : %s" , genesis.hashMerkleRoot.ToString());
-        assert(consensus.hashGenesisBlock == uint256S("0xba4cc371a02e3f3287124788c5071930d7e20f0179ff7f72fb4192f1b51a434e"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa80fe9daa279f405437af5fcdc2e7ec517bb50ae600d497f26187f2fb552d4cb"));
+        assert(consensus.hashGenesisBlock == uint256S("0x63602e1ca0dd6f4e386d7859958b7dfd1e636a8fba175af07c807d286aad5274"));
+        assert(genesis.hashMerkleRoot == uint256S("0x771f0727774c8f2c14beeae2ebf0f9466ff8e5e1b4a120aaa8df969e098b809c"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         // vSeeds.emplace_back("seed-a.FBTC.loshan.co.uk", true);
@@ -146,10 +146,10 @@ public:
         //vSeeds.emplace_back("dnsseed.koin-project.com", false);
 
     
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,35);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,50);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,50);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,50;
         base58Prefixes[EXT_PUBLIC_KEY] = {0xff, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0xff, 0x88, 0xAD, 0xE4};
 
@@ -206,7 +206,7 @@ public:
 
         chainTxData = ChainTxData{
             // Data as of block 59c9b9d3fec105bdc716d84caa7579503d5b05b73618d0bf2d5fa639f780a011 (height 1353397).
-            1529119875, // * UNIX timestamp of last known number of transactions
+            1531803597, // * UNIX timestamp of last known number of transactions
             0,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             0.0     // * estimated number of transactions per second after that timestamp
